@@ -8,7 +8,6 @@ import {
   addFavoriteMovie,
   removeFavoriteMovie,
 } from "../../redux/features/favoriteMovies/favoriteMoviesSlice";
-
 import LoadingSpinner from "../../elements/components/loading-spinner/LoadingSpinner";
 
 function MovieList() {
