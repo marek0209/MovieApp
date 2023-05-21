@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown/";
 // @ts-ignore
 import Readme from "./README.md";
 
-import "github-markdown-css/github-markdown-light.css";
+import "github-markdown-css/github-markdown-dark.css";
 
 export default function Instructions() {
   const [content, setContent] = useState("");
@@ -29,7 +29,9 @@ export default function Instructions() {
     >
       <h2 className="sr-only">Instructions</h2>
       <article>
-        <ReactMarkdown className={["markdown-body"].join(" ")}>
+        <ReactMarkdown
+          className={["markdown-body", "rounded-md p-10"].join(" ")}
+        >
           {content}
         </ReactMarkdown>
       </article>

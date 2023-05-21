@@ -10,7 +10,7 @@ interface INavbarProps {
 export default function Navbar({ ...props }: INavbarProps) {
   const { elements } = props;
   const navigationList = elements.map((e) => (
-    <li>
+    <li key={e}>
       <a
         href={`/${e}`}
         className={["hover:text-orange-500", "dark:hover:text-orange-400"].join(

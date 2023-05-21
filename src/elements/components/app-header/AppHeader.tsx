@@ -27,7 +27,7 @@ export default function AppHeader() {
           <h1 className="sr-only">Createflix</h1>
           <div className={["flex", "items-center"].join(" ")}>
             <div className={["hidden md:flex", "items-center"].join(" ")}>
-              <Navbar elements={["Instructions", "Movie List", "Favorites"]} />
+              <Navbar elements={["Instructions", "Movies", "Favorites"]} />
               <div
                 className={[
                   "flex",
