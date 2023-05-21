@@ -1,23 +1,17 @@
-import React, { useEffect, useState } from "react";
-import fetchMovieList from "../../services/moviesApi";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies } from "../../redux/features/movies/movieSlice";
 import { Movie } from "../../types";
 import MovieListItem from "../../elements/components/movie-list-item/MovieListItem";
+import { RootState } from "../../redux/store";
 
 export default function MovieList() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const dispatch = useDispatch();
+  const movies = useSelector((state: RootState) => state.movies.movies);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const movieList = await fetchMovieList();
-        setMovies(movieList);
-      } catch (error) {
-        console.error("Error fetching movie list:", error);
-      }
-    };
-
-    fetchMovies();
-  }, []);
+    dispatch(fetchMovies() as any);
+  }, [dispatch]);
 
   return (
     <div className={["MovieList"].join(" ")}>
