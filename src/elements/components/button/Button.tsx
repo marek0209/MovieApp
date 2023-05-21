@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ButtonProps {
+export interface ButtonProps {
   href: string;
   children: React.ReactNode;
 }
