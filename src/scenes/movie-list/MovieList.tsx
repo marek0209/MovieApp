@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import fetchMovieList from "../../services/movieApi";
+import fetchMovieList from "../../services/moviesApi";
 import { Movie } from "../../types";
 import MovieListItem from "../../elements/components/movie-list-item/MovieListItem";
 
