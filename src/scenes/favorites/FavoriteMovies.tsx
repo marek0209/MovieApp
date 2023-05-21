@@ -35,8 +35,10 @@ function FavoriteMovies() {
   }
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h2 className="text-4xl font-extrabold dark:text-white">Top Movies</h2>
+    <main className="container mx-auto px-4 ">
+      <h2 className="text-4xl font-extrabold dark:text-white py-4">
+        Top Movies
+      </h2>
       {favoriteMovies.length !== 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {favoriteMovies.map((movie: Movie) => (

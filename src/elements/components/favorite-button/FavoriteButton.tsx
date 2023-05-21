@@ -1,4 +1,5 @@
 import React from "react";
+import "./FavoriteButton.css";
 
 interface FavoriteButtonProps {
   isFavorite: boolean;
@@ -11,6 +12,7 @@ function FavoriteButton(props: FavoriteButtonProps) {
   return (
     <button
       className={[
+        "button",
         "flex-none",
         "flex",
         "items-center",
@@ -19,8 +21,7 @@ function FavoriteButton(props: FavoriteButtonProps) {
         "h-9",
         "rounded-md",
         "text-slate-300",
-        "border",
-        "border-slate-200",
+        "bg-slate-700",
       ].join(" ")}
       type="button"
       aria-label="Like"

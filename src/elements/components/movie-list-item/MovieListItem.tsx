@@ -26,7 +26,7 @@ export default function MovieListItem(props: MovieListItemProps) {
   const resizedImg = resizeImage(movie["im:image"][0].label, "600x600");
 
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+    <article className="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col ">
       <div className="rounded-t-lg">
         <ImageLoader src={resizedImg} alt={`Cover of ${movie.title.label}`} />
       </div>
@@ -47,6 +47,6 @@ export default function MovieListItem(props: MovieListItemProps) {
           <Button href={movie.id.label}>Watch on Itunes</Button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
