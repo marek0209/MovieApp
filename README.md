@@ -1,15 +1,20 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/66e797a4-aafe-40fc-96ca-434c584e1e16/deploy-status)](https://app.netlify.com/sites/task-movie-app-mark/deploys)
+
+You can check deployed app here:
+[https://task-movie-app-mark.netlify.app/](https://task-movie-app-mark.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and created with node [v16.10.0](https://nodejs.org/de/blog/release/v16.10.0/).
 
 ## Task instructions
 
-1. Load and show movie list from [https://itunes.apple.com/us/rss/topmovies/limit=100/json](https://itunes.apple.com/us/rss/topmovies/limit=100/json)
-2. Create proper routes for application 
-3. Add favorites feature for the system
-4. Add app global state (use that one you prefer)
-5. Add loader to that app
-6. Add some additional styles (animations, transitions)
+1. ✅ Load and show movie list from [https://itunes.apple.com/us/rss/topmovies/limit=100/json](https://itunes.apple.com/us/rss/topmovies/limit=100/json)
+2. ✅ Create proper routes for application
+3. ✅ Add favorites feature for the system
+4. ✅ Add app global state (use that one you prefer)
+5. ✅ Add loader to that app
+6. ✅ Add some additional styles (animations, transitions)
 
 You can use all components available in the system, you can edit every component if you like. You can display components using `npm run storybook` command.
 
@@ -31,7 +36,7 @@ Task 1) is obligatory other tasks are mandatory, feel free to select each one yo
     |   +-- movie-list-item
     |       +-- [...]
     |   +-- navbar
-    |       +-- [...]    
+    |       +-- [...]
     +-- containers
     |   +-- [...]
 +-- scenes
@@ -40,7 +45,7 @@ Task 1) is obligatory other tasks are mandatory, feel free to select each one yo
     +-- instructions
     |       +-- [...]
     +-- movie-list
-    |       +-- [...]        
+    |       +-- [...]
 +-- index.css
 +-- index.tsx
 +-- types.ts
