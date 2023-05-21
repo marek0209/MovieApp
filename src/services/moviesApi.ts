@@ -11,7 +11,7 @@ export default async function fetchMovieList(): Promise<Movie[]> {
     const movieList = response.data.feed.entry;
     return movieList;
   } catch (error) {
-    console.error("Error fetching movie list:", error);
+    throw new Error("Failed to fetch data from api");
     return [];
   }
 }
