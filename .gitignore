@@ -25,6 +25,7 @@ yarn-error.log*
 
 # configs
 /.idea
+/.vscode
 
 # copied Readme.md
 /src/scenes/instructions/README.md
