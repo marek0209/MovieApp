@@ -1,26 +1,19 @@
 import React from "react";
-import moviePoster from "./img/movie-poster.png";
 
-const data: {
-  posterImage: string;
+interface ListItemPropsList {
   title: string;
-  description: string;
-} = {
-  posterImage: moviePoster,
-  title: "Spider-Man: No Way Home",
-  description:
-    "For the first time in the cinematic history of Spider-Man, our friendly neighborhood hero's identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk. When he enlists Doctor Strange’s help to restore his secret, the spell tears a hole in their world, releasing the most powerful villains who’ve ever fought a Spider-Man in any universe. Now, Peter will have to overcome his greatest challenge yet, which will not only forever alter his own future but the future of the Multiverse.",
-};
+  summary: string;
+  image: string;
+}
 
-export default function MovieListItem() {
-  const { title, posterImage, description } = data;
-
+export default function MovieListItem(props: ListItemPropsList) {
+  const { title, summary, image } = props;
   return (
     <article className={["mt-6", "mb-12", "shadow-xl", "h-max"].join(" ")}>
       <div className={["flex", "font-sans"].join(" ")}>
         <div className={["flex-none", "w-48", "relative"].join(" ")}>
           <img
-            src={posterImage}
+            src={image}
             alt="Movie Poster"
             className={[
               "absolute",
@@ -86,9 +79,7 @@ export default function MovieListItem() {
               "font-medium",
             ].join(" ")}
           />
-          <p className={["text-sm", "text-slate-700"].join(" ")}>
-            {description}
-          </p>
+          <p className={["text-sm", "text-slate-700"].join(" ")}>{summary}</p>
         </div>
       </div>
     </article>
