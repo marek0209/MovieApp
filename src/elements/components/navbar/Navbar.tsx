@@ -24,7 +24,11 @@ export default function Navbar({ ...props }: INavbarProps) {
 
   return (
     <nav className={["Navbar"].join(" ")}>
-      <ul className={["flex", "items-center", "space-x-8"].join(" ")}>
+      <ul
+        className={["flex", "items-center", "space-x-8", "sm:space-x-4"].join(
+          " "
+        )}
+      >
         {navigationList}
       </ul>
     </nav>
