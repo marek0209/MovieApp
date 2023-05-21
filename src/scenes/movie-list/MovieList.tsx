@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../../redux/features/movies/movieSlice";
 import { RootState } from "../../redux/store";
@@ -20,13 +20,19 @@ export default function MovieList() {
     dispatch(fetchMovies() as any);
   }, [dispatch]);
 
-  const handleAddFavorite = (movie: Movie) => {
-    dispatch(addFavoriteMovie(movie));
-  };
+  const addToFavorites = useCallback(
+    (movie: Movie) => {
+      dispatch(addFavoriteMovie(movie));
+    },
+    [dispatch]
+  );
 
-  const handleRemoveFavorite = (movieId: number) => {
-    dispatch(removeFavoriteMovie(movieId));
-  };
+  const removeFromFavorites = useCallback(
+    (movieId: number) => {
+      dispatch(removeFavoriteMovie(movieId));
+    },
+    [dispatch]
+  );
 
   return (
     <div className={["MovieList"].join(" ")}>
@@ -40,8 +46,8 @@ export default function MovieList() {
             (favMovie) =>
               favMovie.id.attributes["im:id"] === movie.id.attributes["im:id"]
           )}
-          onAddFavorite={handleAddFavorite}
-          onRemoveFavorite={handleRemoveFavorite}
+          onAddFavorite={addToFavorites}
+          onRemoveFavorite={removeFromFavorites}
         />
       ))}
 
@@ -52,8 +58,8 @@ export default function MovieList() {
           key={movie.id.attributes["im:id"]}
           movie={movie}
           isFavorite
-          onAddFavorite={handleAddFavorite}
-          onRemoveFavorite={handleRemoveFavorite}
+          onAddFavorite={addToFavorites}
+          onRemoveFavorite={removeFromFavorites}
         />
       ))}
     </div>
