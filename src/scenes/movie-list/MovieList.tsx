@@ -18,12 +18,7 @@ export default function MovieList() {
       <h1>Test Movie List</h1>
 
       {movies.map((movie: Movie) => (
-        <MovieListItem
-          key={movie.id.attributes["im:id"]}
-          title={movie.title.label}
-          summary={movie.summary.label}
-          image={movie["im:image"][0].label}
-        />
+        <MovieListItem key={movie.id.attributes["im:id"]} movie={movie} />
       ))}
     </div>
   );

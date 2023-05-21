@@ -1,19 +1,20 @@
 import React from "react";
 
-interface ListItemPropsList {
-  title: string;
-  summary: string;
-  image: string;
+import { Movie } from "../../../types";
+
+interface MoveListItemProps {
+  movie: Movie;
 }
 
-export default function MovieListItem(props: ListItemPropsList) {
-  const { title, summary, image } = props;
+export default function MovieListItem(props: MoveListItemProps) {
+  const { movie } = props;
+
   return (
     <article className={["mt-6", "mb-12", "shadow-xl", "h-max"].join(" ")}>
       <div className={["flex", "font-sans"].join(" ")}>
         <div className={["flex-none", "w-48", "relative"].join(" ")}>
           <img
-            src={image}
+            src={movie["im:image"][0].label}
             alt="Movie Poster"
             className={[
               "absolute",
@@ -34,7 +35,7 @@ export default function MovieListItem(props: ListItemPropsList) {
                 "text-slate-900",
               ].join(" ")}
             >
-              {title}
+              {movie.title.label} - {movie.id.attributes["im:id"]}
             </h3>
             <div
               className={[
@@ -79,7 +80,9 @@ export default function MovieListItem(props: ListItemPropsList) {
               "font-medium",
             ].join(" ")}
           />
-          <p className={["text-sm", "text-slate-700"].join(" ")}>{summary}</p>
+          <p className={["text-sm", "text-slate-700"].join(" ")}>
+            {movie.summary.label}
+          </p>
         </div>
       </div>
     </article>
