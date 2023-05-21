@@ -34,7 +34,7 @@ export default function MovieListItem(props: MovieListItemProps) {
             {movie["im:name"].label}
           </h2>
           <p className={["text-slate-500", "mb-4"].join(" ")}>
-            {movie["im:artist"].label}
+            {movie.category.attributes.label}
           </p>
           <p className={["text-slate-500", "mb-4"].join(" ")}>
             {movie["im:releaseDate"].attributes.label}
@@ -60,7 +60,7 @@ export default function MovieListItem(props: MovieListItemProps) {
               <svg
                 width="20"
                 height="20"
-                fill={isFavorite ? "black" : "red"}
+                fill={isFavorite ? "red" : "grey"}
                 aria-hidden="true"
               >
                 <path
