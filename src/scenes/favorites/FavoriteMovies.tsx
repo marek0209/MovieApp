@@ -1,6 +1,5 @@
-import React, { useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies } from "../../redux/features/movies/movieSlice";
+import React, { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import MovieListItem from "../../elements/components/movie-list-item/MovieListItem";
 import { Movie } from "../../types";
@@ -9,16 +8,11 @@ import {
   removeFavoriteMovie,
 } from "../../redux/features/favoriteMovies/favoriteMoviesSlice";
 
-function MovieList() {
+function FavoriteMovies() {
   const dispatch = useDispatch();
-  const movies = useSelector((state: RootState) => state.movies.movies);
   const favoriteMovies = useSelector(
     (state: RootState) => state.favoriteMovies.favoriteMovies
   );
-
-  useEffect(() => {
-    dispatch(fetchMovies() as any);
-  }, [dispatch]);
 
   const addToFavorites = useCallback(
     (movie: Movie) => {
@@ -35,17 +29,14 @@ function MovieList() {
   );
 
   return (
-    <div className={["MovieList"].join(" ")}>
-      <h1>Test Movie List</h1>
+    <div>
+      <h2>Favorite Movies</h2>
 
-      {movies.map((movie: Movie) => (
+      {favoriteMovies.map((movie: Movie) => (
         <MovieListItem
           key={movie.id.attributes["im:id"]}
           movie={movie}
-          isFavorite={favoriteMovies.some(
-            (favMovie) =>
-              favMovie.id.attributes["im:id"] === movie.id.attributes["im:id"]
-          )}
+          isFavorite
           onAddFavorite={addToFavorites}
           onRemoveFavorite={removeFromFavorites}
         />
@@ -54,4 +45,4 @@ function MovieList() {
   );
 }
 
-export default MovieList;
+export default FavoriteMovies;
