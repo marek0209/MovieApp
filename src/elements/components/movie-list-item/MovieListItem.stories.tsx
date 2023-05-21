@@ -109,8 +109,19 @@ const mockMovieProps: Movie = {
   },
 };
 
+function mockFunction() {
+  console.log("mock");
+}
+
 const Template: ComponentStory<typeof MovieListItem> = function () {
-  return <MovieListItem movie={mockMovieProps} />;
+  return (
+    <MovieListItem
+      movie={mockMovieProps}
+      isFavorite
+      onAddFavorite={mockFunction}
+      onRemoveFavorite={mockFunction}
+    />
+  );
 };
 
 export const MovieListItemExample = Template.bind({});

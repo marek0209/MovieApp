@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import moviesReducer from "./features/movies/movieSlice";
-import favoriteMoviesReducer from "./features/favoriteMovies/favoriteMovies";
+import favoriteMoviesReducer from "./features/favoriteMovies/favoriteMoviesSlice";
 
 const rootReducer = combineReducers({
   movies: moviesReducer,
