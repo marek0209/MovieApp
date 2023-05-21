@@ -3,7 +3,16 @@ import createflixLogo from "../../../createfix-logo.png";
 
 export default function AppFooter() {
   return (
-    <footer className={["pb-16", "text-sm", "leading-6"].join(" ")}>
+    <footer
+      className={[
+        "pb-16",
+        "text-sm",
+        "leading-6",
+        "flex",
+        "items-end",
+        "justify-center",
+      ].join(" ")}
+    >
       <div
         className={[
           "max-w-7xl",

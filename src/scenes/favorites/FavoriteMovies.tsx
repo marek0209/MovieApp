@@ -36,18 +36,27 @@ function FavoriteMovies() {
 
   return (
     <main className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-semibold mb-4">Favorite videos</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {favoriteMovies.map((movie: Movie) => (
-          <MovieListItem
-            key={movie.id.attributes["im:id"]}
-            movie={movie}
-            isFavorite
-            onAddFavorite={addToFavorites}
-            onRemoveFavorite={removeFromFavorites}
-          />
-        ))}
-      </div>
+      <h2 className="text-4xl font-extrabold dark:text-white">Top Movies</h2>
+      {favoriteMovies.length !== 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {favoriteMovies.map((movie: Movie) => (
+            <MovieListItem
+              key={movie.id.attributes["im:id"]}
+              movie={movie}
+              isFavorite
+              onAddFavorite={addToFavorites}
+              onRemoveFavorite={removeFromFavorites}
+            />
+          ))}
+        </div>
+      )}
+      {favoriteMovies.length === 0 && (
+        <div className="flex justify-center items-center flex-grow">
+          <h3 className="text-3xl font-bold dark:text-white">
+            Ups... Looks like you didn&apos;t like any of the movies
+          </h3>
+        </div>
+      )}
     </main>
   );
 }
